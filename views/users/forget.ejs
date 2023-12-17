@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/forget_pass.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot-Password</title>
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg">
+</head>
+<body>
+<div class="main">
+    <div class="navbar">
+        <div class="lnmlogo"></div>
+        <div class="develop"><a href="/developedBy" >Developed By ISDL Team </a></div>
+      </div>
+      <h1 class="heading"><a >Forgot Password</a></h1>
+<div class = "Loginform">
+
+    <%
+    if(typeof message !== 'undefined'){
+        %>
+            <h4 id="servermsg"><%= message %></h4>
+        <%
+    }
+                    
+    %>
+
+    <form action="/forget" method="post">
+            <input class="logininput" type="email" name="email" required placeholder="Enter email">
+        <br><br>
+        <input  type="submit" class="button" value="Send reset link">
+        
+    </form>
+    <button class="button"><a href="/login"><span class="spot"></span>Go to login</a></button>
+
+</div>
+
+</div>
+</body>
+</html>
+<% include('../layouts/footer.ejs') %>

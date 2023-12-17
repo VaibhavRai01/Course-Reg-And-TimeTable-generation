@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/user_faculty.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty</title>
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg">
+
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="lnmlogo"></div>
+            <div class="develop"><a href="/developedBy" >Developed By ISDL Team </a></div>
+          </div>
+          <% if(typeof message !=='undefined' ){ %>
+              <h4 id="servermsg" style="color: blue;">
+                  <%= message %>
+              </h4>
+              <% } %>
+              <h1 class="heading"><a > <%=user.name%> </a></h1>
+              
+              
+                <div class="container1">              
+                    <div class="image">
+                        <img src= "/images/student_img.svg" />
+                      </div>
+                      <div class="content">
+                        <div class="user_details">
+                            <ol>
+                <li><span><a class="navlinkss"><%=user.email%></a></span></li>
+                <li><span>Courses</span></li>
+                <a class="navlinkss">
+                    <% if(coursereg.length> 0)
+                    {
+                        for(let i=0; i<coursereg.length; i++){ %>
+                            <tr>
+                                <td>
+                                    <%= coursereg[i]%>
+                                </td>
+                            </tr>
+                            <% } } %>
+                        </a>
+                    </ol>
+                    </div>    
+                </div>
+            </div>
+            <button class="button"><a href="/ttgen"> View Timetable</a></button>
+            <button class="button"><a  href="/logout">Logout</a></button>
+                      
+                        
+                        
+                        
+                    </div>
+                    
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/user_tt20.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-2.1.4.js"></script>
+    <title>Admin</title>
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg">
+
+</head>
+
+<body>
+    <div class="loading-screen" id="loading-screen">
+        <div class="loader"></div>
+    </div>
+    <div class="main">
+        <div class="navbar">
+            <div class="lnmlogo"></div>
+            <div class="develop"><a href="/admin/developedBy" >Developed By ISDL Team </a></div>
+        </div>
+    <h1>4th Year Time Table</h1>
+    <h2>Even Semester</h2>
+    <% if(typeof message !=='undefined' ){ %>
+        <h4>
+            <%= message %>
+        </h4>
+        <% } %>
+
+
+
+        <table width="100%">
+            <h3>Monday</h3>
+                
+
+
+            <% if(corecoursecse.length> 0)
+                {
+                for(let i=0; i<20; i++){ %>
+                    <tr>
+                        <%if(corecoursecse.length>i && i<5){%>
+                            <td>
+                                <%= i+1%>:00PM- <%=i+2%> :00PM
+                                    
+                            </td>
+                            <td>
+                                <%= corecoursecse[i].coursename %>
+                                    <%= corecoursecse[i].branch %>
+                            </td>
+
+                            <%}if(corecoursecce.length>i && i<5){%>
+                            <td>
+                                <%= corecoursecce[i].coursename %>
+                                    <%= corecoursecce[i].branch %>
+                            </td>
+
+                            <%} if(corecourseece.length>i && i<5){%>
+                                <td>
+                                    <%= corecourseece[i].coursename %>
+                                        <%= corecourseece[i].branch %>
+                                </td>
+
+                                <%} if(corecourseme.length>i && i<5){%>
+                                    <td>
+                                        <%= corecourseme[i].coursename %>
+                                            <%= corecourseme[i].branch %>
+                                    </td>
+
+                                    <%} %>
+
+
+
+
+
+                    </tr>
+                    <% } } %>
+        </table>
+            <br><br>
+            <table width="100%">
+                <h3>Tuesday</h3>
+                    
+
+
+                <% if(programcoursecse.length> 0)
+                    {
+                    for(let i=0; i<20; i++ ){ %>
+                        <tr>
+                            <%if(i<3){%>
+                            <td>
+                                
+                                <%if(i==0){%>
+                                    1:00PM- 2:30PM
+                                <%}
+                                if(i==1){%>
+                                    2:30PM -4:00PM
+                                <%}
+                                if(i==2){%>
+                                    4:00PM-5:30PM
+                                <%}%>
+                                    
+                                    
+                            </td>
+                            <%}%>
+                            <%if(programcoursecse.length>i && i<3){%>
+                                
+                                
+                                <td>
+                                    <%= programcoursecse[i].coursename %>
+                                        <%= programcoursecse[i].branch %>
+                                </td>
+    
+                                <%}if(programcoursecce.length>i && i<3){%>
+                                <td>
+                                    <%= programcoursecce[i].coursename %>
+                                        <%= programcoursecce[i].branch %>
+                                </td>
+
+                                <%} if(programcourseece.length>i && i<3){%>
+                                    <td>
+                                        <%= programcourseece[i].coursename %>
+                                            <%= programcourseece[i].branch %>
+                                    </td>
+
+                                    <%} if(programcourseme.length>i && i<3){%>
+                                        <td>
+                                            <%= programcourseme[i].coursename %>
+                                                <%= programcourseme[i].branch %>
+                                        </td>
+
+                                        <%} %>
+
+
+
+
+
+                        </tr>
+                        <% } } %>
+            </table>
+            <br><br>
+            <table width="100%">
+                <h3>Wednesday</h3>
+                    
+
+
+                <% if(corecoursecse.length> 0)
+                    {
+                    for(let i=0; i<20; i++){ %>
+                        <tr>
+                            <%if(corecoursecse.length>i && i<5){%>
+                                <td>
+                                    <%= i+1%>:00PM- <%=i+2%> :00PM
+                                        
+                                </td>
+                                <td>
+                                    <%= corecoursecse[i].coursename %>
+                                        <%= corecoursecse[i].branch %>
+                                </td>
+    
+                                <%}if(corecoursecce.length>i && i<5){%>
+                                <td>
+                                    <%= corecoursecce[i].coursename %>
+                                        <%= corecoursecce[i].branch %>
+                                </td>
+
+                                <%} if(corecourseece.length>i && i<5){%>
+                                    <td>
+                                        <%= corecourseece[i].coursename %>
+                                            <%= corecourseece[i].branch %>
+                                    </td>
+
+                                    <%} if(corecourseme.length>i && i<5){%>
+                                        <td>
+                                            <%= corecourseme[i].coursename %>
+                                                <%= corecourseme[i].branch %>
+                                        </td>
+
+                                        <%} %>
+
+
+
+
+
+                        </tr>
+                        <% } } %>
+            </table>
+            <br><br>
+            <table width="100%">
+                <h3>Thursday</h3>
+                    
+
+
+                <% if(programcoursecse.length> 0)
+                    {
+                    for(let i=0; i<20; i++ ){ %>
+                        <tr>
+                            <%if(i<3){%>
+                            <td>
+                                
+                                <%if(i==0){%>
+                                    1:00PM- 2:30PM
+                                <%}
+                                if(i==1){%>
+                                    2:30PM -4:00PM
+                                <%}
+                                if(i==2){%>
+                                    4:00PM-5:30PM
+                                <%}%>
+                                    
+                                    
+                            </td>
+                            <%}%>
+                            <%if(programcoursecse.length>i && i<3){%>
+                                
+                                
+                                <td>
+                                    <%= programcoursecse[i].coursename %>
+                                        <%= programcoursecse[i].branch %>
+                                </td>
+    
+                                <%}if(programcoursecce.length>i && i<3){%>
+                                <td>
+                                    <%= programcoursecce[i].coursename %>
+                                        <%= programcoursecce[i].branch %>
+                                </td>
+
+                                <%} if(programcourseece.length>i && i<3){%>
+                                    <td>
+                                        <%= programcourseece[i].coursename %>
+                                            <%= programcourseece[i].branch %>
+                                    </td>
+
+                                    <%} if(programcourseme.length>i && i<3){%>
+                                        <td>
+                                            <%= programcourseme[i].coursename %>
+                                                <%= programcourseme[i].branch %>
+                                        </td>
+
+                                        <%} %>
+
+
+
+
+
+                        </tr>
+                        <% } } %>
+            </table>
+            <br><br>
+            <table width="100%">
+                <h3>Friday</h3>
+                    
+
+
+                <% if(corecoursecse.length> 0)
+                    {
+                    for(let i=0; i<20; i++){ %>
+                        <tr>
+                            <%if(corecoursecse.length>i && i<5){%>
+                                <td>
+                                    <%= i+1%>:00PM- <%=i+2%>:00PM
+                                        
+                                </td>
+                                <td>
+                                    <%= corecoursecse[i].coursename %>
+                                        <%= corecoursecse[i].branch %>
+                                </td>
+    
+                                <%}if(corecoursecce.length>i && i<5){%>
+                                <td>
+                                    <%= corecoursecce[i].coursename %>
+                                        <%= corecoursecce[i].branch %>
+                                </td>
+
+                                <%} if(corecourseece.length>i && i<5){%>
+                                    <td>
+                                        <%= corecourseece[i].coursename %>
+                                            <%= corecourseece[i].branch %>
+                                    </td>
+
+                                    <%} if(corecourseme.length>i && i<5){%>
+                                        <td>
+                                            <%= corecourseme[i].coursename %>
+                                                <%= corecourseme[i].branch %>
+                                        </td>
+
+                                        <%} %>
+
+
+
+
+
+                        </tr>
+                        <% } } %>
+            </table>
+            <br><br>
+            <button ><a href="/admin/home"><span class="spot"></span>Go to home</a></button>
+            <!-- <a href="/admin/home"><span class="spot"></span>Go to home</a> -->
+            </div>
+            <script>
+                window.addEventListener('load', function() {
+                    var loadingScreen = document.getElementById('loading-screen');
+                    setTimeout(function() {
+                        loadingScreen.style.display = 'none';
+                    }, 1000);
+                });
+            </script>
+</body>
+
+</html>

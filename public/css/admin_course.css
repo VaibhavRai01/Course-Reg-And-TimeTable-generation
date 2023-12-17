@@ -1,0 +1,347 @@
+body{
+  overflow-x: hidden;
+  background-image: url('/images/differentbg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main {
+  
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   padding: 20px;
+ padding-top: 80px;
+  margin: -10px; 
+  overflow-x: hidden;
+  }
+
+  .heading 
+{
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+  .lnmlogo {
+    width: 170vh;
+    height: 35px;
+    background-image: url("/images/lnm_logo.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  .navbar {
+    width: 180vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    /* padding-bottom: 75px; */
+    padding-right: 50px;
+    position: absolute;
+  }
+  
+  .button 
+{
+    width: 312px;
+    height: 84px;
+    background-color: #C50248;
+    border-radius: 86.35px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+    text-decoration: none;
+    margin: 5% 0;
+
+}
+
+  .lnmlogo {
+    width: 170vh;
+    height: 35px;
+    background-image: url("/images/lnm_logo.svg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+
+  .formdiv
+{
+    /* width: 377px;
+height: 308.94px; */
+width: 28%;
+height: 80%;
+flex-direction:column;
+flex-shrink: 0;
+border-radius: 10px;
+border: 2px solid black;
+
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.11) 100%), linear-gradient(0deg, rgba(4, 20, 61, 0.20) 0%, rgba(4, 20, 61, 0.20) 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+
+backdrop-filter: blur(48.5px);
+margin:auto;
+justify-content:center;
+
+
+}
+  /* card ki css */
+
+  .card_heading1
+{
+    padding: 10px;
+    text-align: center;
+   color: white;
+   font-size: 1.5rem;
+   margin: 0px;
+}
+.card_heading2
+{
+    padding: 5px;
+   color: #FFFFFF;
+   margin: 0px;
+   font-size: 1.25rem;
+  
+}
+
+.card_image
+{
+    width: 30%;
+    height: 85%;
+    border: 4px solid #2D1F6F;
+    border-radius: 100%;
+    position: absolute;
+    top: 16px;
+    left: -100px;
+    background-color: white;
+    
+}
+
+.card_main{
+    position: relative;
+    height: auto;
+    width: 55vh;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:"Poppins","sans-serif";
+    color:white;
+    /* box-sizing: border-box; */
+    margin: 30px 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    /* padding: 10px 15px 10px 65px; */
+    border: 2px solid #6DAFDE;
+   border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    /* border: 3px solid rgba(255, 255, 255, 0.15); */
+
+    position: relative;
+}
+
+.card_content{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 191px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+
+.courses{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.trashImg{
+  width: 50px;
+  height: 50px;
+
+}
+
+/* scrollbar */
+
+.body{
+  mask-image: linear-gradient(to top, transparent, black),
+      linear-gradient(to left, transparent 7px, black 7px);
+  mask-size: 100% 20000px;
+  mask-position: left bottom;
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+      linear-gradient(to left, transparent 7px, black 7px);
+  -webkit-mask-size: 100% 20000px;
+  -webkit-mask-position: left bottom;
+  transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+}
+
+:hover {
+  -webkit-mask-position: left top;
+}
+
+::-webkit-scrollbar{
+  width: 7px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #4e4e4e;
+  border-radius: 9px;
+}
+
+.formdiv{ 
+  background-image: url("/images/mmesh1.svg");
+  
+}
+
+.addcourseform{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputdata{
+  border-radius: 15px;
+  /* border-width: 2px; */
+  border: none;
+  background-color: white;
+  width: 180px;
+  height: 40px;
+  text-align: center;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+/* deletepopup */
+
+.deletepopup{
+  display: none;
+}
+
+.card {
+  width: 300px;
+  height: fit-content;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.068);
+}
+.card-content {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(27, 27, 27);
+}
+.card-description {
+  font-weight: 100;
+  color: rgb(102, 102, 102);
+}
+.card-button-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.card-button {
+  width: 50%;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.primary {
+  background-color: rgb(255, 114, 109);
+  color: white;
+}
+.primary:hover {
+  background-color: rgb(255, 73, 66);
+}
+.secondary {
+  background-color: #ddd;
+}
+.secondary:hover {
+  background-color: rgb(197, 197, 197);
+}
+.exit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.exit-button:hover svg {
+  fill: black;
+}
+.exit-button svg {
+  fill: rgb(175, 175, 175);
+}
+
+.loginbutton {
+  width: 150px;
+   display: flex;
+   height: 50px;
+   justify-content: center;
+   align-items: center;
+   background-color: #c50248; /* Green background color */
+   color: black; /* White text color */
+   border: none;
+   border-radius: 30px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   cursor: pointer;
+   text-align: center;
+   border-radius: 86.35px;
+   border: 1px solid rgba(197, 2, 72, 0.8);
+   background: var(--4-a-3-aff, rgba(197, 2, 72, 0.8));
+   box-shadow: 0px 4.62591px 18.50365px 0px rgba(74, 58, 255, 0.28);
+   /* content: '\2192'; Unicode character for right arrow    */
+ }

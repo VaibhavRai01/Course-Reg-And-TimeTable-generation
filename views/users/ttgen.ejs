@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/user_ttgen.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTable</title>
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg">
+    <!-- <script src="jquery-2.1.4.js"></script>  -->
+</head>
+<body>
+    <% include('../layouts/header.ejs')%>
+    <!-- <div class="loading-screen" id="loading-screen">
+        <div class="loader"></div>
+    </div> -->
+    <div class="main">
+        <div class="lnmlogo"></div>
+        <h1 class="heading"><a >Time Table  </a></h1>
+        <div class="container1">
+        <!-- <h1>time table generation</h1> -->
+        
+        <!-- <h2>y23</h2> -->
+        <div class="btn">
+            <a href="/ttgen/y23" ><button class="button">1st Year →</button></a>
+            </div>
+            <!-- <h2>y22</h2> -->
+            <div class="btn">
+            <a href="/ttgen/y22" ><button class="button">2nd Year →</button></a>
+            </div>
+            <!-- <h2>y21</h2> -->
+            <div class="btn">
+            <a href="/ttgen/y21" ><button class="button">3rd Year →</button></a>
+            </div>
+            <!-- <h2>y20</h2> -->
+            <div class="btn">
+            <a href="/ttgen/y20" ><button class="button">4th Year →</button></a>
+            </div>
+    </div>
+    <div class="btn">
+        <a href="/home"><button class="button">Go to Home</button></a>
+    </div>
+    <% include('../layouts/footer.ejs')%>       
+    <!-- <script>
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        });
+    </script> -->
+</body>    
+</html>

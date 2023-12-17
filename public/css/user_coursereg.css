@@ -1,0 +1,445 @@
+body{
+  overflow-x: hidden;
+}
+
+.main{
+    background-image: url("/images/smaller_bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 87.1vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 80px;
+    margin: -10px;
+    overflow-x: hidden;
+}
+
+.button{
+  width: 312px;
+    height: 84px;
+    background-color: #C50248;
+    border-radius: 86.35px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+    text-decoration: none;
+    margin: 5% 0;
+}
+
+.container1{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.navbar{
+    width:180vh;
+    display: flex;
+    color: white;
+    flex-direction: row;
+}
+
+.lnmlogo{
+    width:170vh;
+    height: 35px;
+    background-image: url('/images/lnm_logo.svg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.heading 
+{
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+.heading_2{
+    font-size: 1.5rem;
+    color:white ;
+    display: flex;
+    /* align-items: center; */
+    margin: 10px
+}
+.heading1
+{
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 5% 0;
+}
+
+.container1 
+{
+    position: relative;
+    display: flex;
+    width: 80%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tick{
+    top: 85px;
+    left: 440px;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    background-color: #D9D9D9;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.tickImg{
+    height: 60%;
+    width: 60%;
+}
+
+/* card ki css */
+
+.card_heading1
+{
+    padding: 10px;
+    text-align: center;
+   color: white;
+   font-size: 1.5rem;
+   margin: 0px;
+}
+.card_heading2
+{
+    padding: 5px;
+   color: #FFFFFF;
+   margin: 0px;
+   font-size: 1.25rem;
+  
+}
+
+.card_image
+{
+    width: 30%;
+    border: 4px solid #2D1F6F;
+    border-radius: 100%;
+    position: absolute;
+    top: 40px;
+    left: -85px;
+    background-color: white;
+    
+}
+
+.card_main{
+    position: relative;
+    min-height: 30vh;
+    height: auto;
+    width: 55vh;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:"Poppins","sans-serif";
+    color:white;
+    /* box-sizing: border-box; */
+    margin: 30px 0;
+    padding: 10px 15px 10px 65px;
+    border: 2px solid #6DAFDE;
+   border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    /* border: 3px solid rgba(255, 255, 255, 0.15); */
+
+    position: relative;
+}
+
+.card_content{
+    width: 491px;
+    height: 191px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.photo_instructor{
+    width: 100%;
+    height: 100%;
+}
+
+
+.courses{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.develop{
+    color: white;
+    text-align: center;
+    width: 100px;
+}
+
+
+/* loader */
+
+.loader {
+    animation: rotate 1s infinite;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .loader:before,
+  .loader:after {
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  
+  .loader:before {
+    animation: ball1 1s infinite;
+    background-color: #cb2025;
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+  
+  .loader:after {
+    animation: ball2 1s infinite;
+    background-color: #00a096;
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  
+  @keyframes rotate {
+    0% {
+      -webkit-transform: rotate(0deg) scale(0.8);
+      -moz-transform: rotate(0deg) scale(0.8);
+    }
+  
+    50% {
+      -webkit-transform: rotate(360deg) scale(1.2);
+      -moz-transform: rotate(360deg) scale(1.2);
+    }
+  
+    100% {
+      -webkit-transform: rotate(720deg) scale(0.8);
+      -moz-transform: rotate(720deg) scale(0.8);
+    }
+  }
+  
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 #f8b334;
+    }
+  
+    50% {
+      box-shadow: 0 0 0 #f8b334;
+      margin-bottom: 0;
+      -webkit-transform: translate(15px,15px);
+      -moz-transform: translate(15px, 15px);
+    }
+  
+    100% {
+      box-shadow: 30px 0 0 #f8b334;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 #97bf0d;
+    }
+  
+    50% {
+      box-shadow: 0 0 0 #97bf0d;
+      margin-top: -20px;
+      -webkit-transform: translate(15px,15px);
+      -moz-transform: translate(15px, 15px);
+    }
+  
+    100% {
+      box-shadow: 30px 0 0 #97bf0d;
+      margin-top: 0;
+    }
+  }
+
+
+  #loading-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    padding-left: 42%;
+    padding-top: 20%;
+    background-color: #212121;
+    /* display: none; */
+}
+
+
+
+/* checkbox */
+
+
+.cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.cont {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+  user-select: none;
+}
+
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.6em;
+  width: 1.6em;
+  border-radius: 50%;
+  background: #ffeded38;
+  transition: all 0.2s ease;
+}
+
+.checkmark {
+  opacity: 0.4;
+}
+
+.cont input:checked ~ .checkmark {
+  background: linear-gradient(144deg,#af40ff,#5b42f3 50%,#00ddeb);
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.cont input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.cont .checkmark:after {
+  left: 0.61em;
+  top: 0.43em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+
+/* scrollbar */
+
+.body{
+  mask-image: linear-gradient(to top, transparent, black),
+      linear-gradient(to left, transparent 7px, black 7px);
+  mask-size: 100% 20000px;
+  mask-position: left bottom;
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+      linear-gradient(to left, transparent 7px, black 7px);
+  -webkit-mask-size: 100% 20000px;
+  -webkit-mask-position: left bottom;
+  transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+}
+
+:hover {
+  -webkit-mask-position: left top;
+}
+
+::-webkit-scrollbar{
+  width: 7px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #4e4e4e;
+  border-radius: 9px;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+/* popup */
+
+.success {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 320px;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  background: #EDFBD8;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px -3px #111;
+}
+
+.success__icon {
+  width: 20px;
+  height: 20px;
+  transform: translateY(-2px);
+  margin-right: 8px;
+}
+
+.success__icon path {
+  fill: #84D65A;
+}
+
+.success__title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #2B641E;
+}
+
+.success__close {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.success__close path {
+  fill: #2B641E;
+}

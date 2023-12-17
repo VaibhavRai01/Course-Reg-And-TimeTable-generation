@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/admin_login.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginpage</title>
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg">
+    
+</head>
+ 
+<body>
+    <div class="main">
+    <div class="navbar">
+        <div class="navLogo">
+            <div class="lnmlogo"></div>
+            <div class="develop"><a href="/admin/developedBy" >Developed By ISDL Team </a></div>
+        </div>
+        <div class="lnmphoto"></div>
+    </div>
+    <div class="container1">
+        <div class="logincontainer">
+            <div class="popup">
+                <% if(typeof message !=='undefined' ){ %>
+                <h4>
+                    <%= message %>
+                </h4>
+                <% } %>
+            </div>
+        <!-- <h1 id="heading">Login in your account</h1> -->
+                <form action="" method="post">
+
+                    <!-- <label for="email">Email Address</label> -->
+                    <input type="email" id="email" name="email" class="logininput" placeholder="Enter your email address" required>
+                    <br>
+                    <!-- <label for="password">Password</label> -->
+                    <input type="password" name="password" class="logininput" required placeholder="Enter password">
+                    <br>
+                    <input type="submit" class="loginbutton">
+                        
+                </input>
+
+                </form>
+            </div>
+
+    </div>
+</div>
+<!-- <div className={lpcss.container1}>
+        <div className={lpcss.logincontainer}>
+            <input className={lpcss.logininput} placeholder='EMAIL'></input>
+            <input className={lpcss.logininput} placeholder='PASSWORD'></input>
+            <div className={lpcss.loginbutton}>
+              <img src={arrow} className= {lpcss.arrow1} />
+            </div>
+        </div>
+        
+    </div> -->
+
+    <% include('../layouts/footer.ejs') %>

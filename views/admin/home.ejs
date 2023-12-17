@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="/css/admin_home.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg">
+  </head>
+  <body>
+    <div class="main">
+      <% include('../layouts/header.ejs') %>
+
+      <div class="navbar">
+        <div class="lnmlogo"></div>
+        <div class="develop"><a href="/admin/developedBy" >Developed By ISDL Team </a></div>
+      </div>
+
+      <h1 class="admin">Welcome, <%=admin.name %></h1>
+      <div class="image_admin">
+        <img src="/images/image 3.png" >
+      </div>
+      <table style="width: 50%">
+        <div class="container1">
+        <div class="content">
+          <!-- <tr> -->
+            <h1 class="card_heading1">Email :- </h1>
+            <h2 class="card_heading2"><%=admin.email%></h2>
+          <!-- </tr> -->
+        </div>
+      </div>
+      </table>
+      <div class="twoButton">
+        <a href="/admin/ttgen"><button class="button">Timetable Generation →</button></a>
+        <a href="/admin/add-course"><button class="button">Add / Delete Course →</button></a>
+      </div>
+      <!-- <br /><br /> -->
+      <div class="twoButton">
+        <!-- <a href="/admin/new-user"><button class="button">Add Student →</button></a> -->
+        <a href="/admin/new-faculty"><button class="button">Add Faculty →</button></a>
+        <!-- <br /><br /> -->
+        <a href="/admin/logout"><button class="button">Logout →</button></a>
+      </div>
+      <% include('../layouts/footer.ejs') %>
+    </div>
+  </body>
+</html>

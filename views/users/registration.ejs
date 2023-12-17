@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/user_registration.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg" />
+    <script>
+      function validatePassword() {
+        const password = document.getElementById("password").value;
+        const name = document.getElementById("name").value;
+
+        const hasMinimumLength = password.length >= 8;
+        const hasSpecialCharacter = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+        const hasDigit = /\d/.test(password);
+        const hasSpecialCharInName = /[!@#$%^&*(),.?":{}|<>]/.test(name);
+
+        const isPasswordValid =
+          hasMinimumLength && hasSpecialCharacter && hasDigit;
+        const isNameValid = !hasSpecialCharInName;
+
+        if (isPasswordValid) {
+          document.getElementById("passwordError").innerText = "";
+        } else {
+          document.getElementById("passwordError").innerText =
+            "At least 8 characters long, at least one special character, at least one digit.";
+        }
+
+        if (isNameValid) {
+          document.getElementById("nameError").innerText = "";
+        } else {
+          document.getElementById("nameError").innerText =
+            "Name should not contain special characters.";
+        }
+
+        // Enable or disable sign-up button based on both name and password validity
+        const signUpButton = document.getElementById("signupButton");
+        signUpButton.disabled = !(isPasswordValid && isNameValid);
+
+        return isPasswordValid && isNameValid;
+      }
+
+      function validateName() {
+        const name = document.getElementById("name").value;
+        const hasSpecialCharacter = /[!@#$%^&*(),.?":{}|<>]/.test(name);
+
+        if (!hasSpecialCharacter) {
+          document.getElementById("nameError").innerText = "";
+        } else {
+          document.getElementById("nameError").innerText =
+            "Name should not contain special characters.";
+        }
+
+        // Enable or disable sign-up button based on both name and password validity
+        const signUpButton = document.getElementById("signupButton");
+        signUpButton.disabled = !(validatePassword() && !hasSpecialCharacter);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="lnmlogo"></div>
+        <div class="develop"><a href="/developedBy" >Developed By ISDL Team </a></div>
+      </div>
+      <div><h1 class="heading">Sign-Up</h1></div>
+      <div class="container1">
+        <div class="logincontainer">
+          <!-- <h1 id="heading" style="margin: 0; padding: 0">
+              Sign Up
+            </h1> -->
+          <div class="loginform">
+            <form
+              class="form"
+              action=""
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <% if(typeof message !=='undefined' ){ %>
+              <h4 id="servermsg" style="color: blue"><%= message %></h4>
+              <% } %>
+              <br />
+              <!-- <label for="text"></label> -->
+
+              <input
+                type="text"
+                class="logininput"
+                id="name"
+                name="name"
+                oninput="validateName()"
+                placeholder="Enter your Name"
+                required
+              />
+              <span id="nameError" style="color: red"></span>
+              <br />
+              <!-- <label for="text">Roll Number</label> -->
+              <input
+                class="logininput"
+                type="text"
+                id="text"
+                name="rollno"
+                placeholder="Enter your Roll Number"
+                required
+              />
+              <br />
+              <!-- <label for="branch">Branch</label> -->
+              <!-- <label for="email">Email Address</label> -->
+              <input
+                class="logininput"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <br />
+              <!-- <label for="sem">Semester</label> -->
+              <select id="semester" name="semester" required class="selectbox">
+                <option value="" disabled selected hidden>
+                  Select Semester
+                </option>
+                <option value="8">8</option>
+                <option value="6">6</option>
+                <option value="4">4</option>
+                <option value="2">2</option>
+              </select>
+              <br />
+              <!-- <label for="password">Password</label> -->
+              <select id="branch" name="branch" required class="selectbox">
+                <option value="" disabled selected hidden>Select Branch</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="MME">MME</option>
+                <option value="CCE">CCE</option>
+              </select>
+              <br />
+              <input
+                type="password"
+                class="logininput"
+                id="password"
+                name="password"
+                oninput="validatePassword()"
+                placeholder="Enter password"
+                required
+              />
+              <span id="passwordError" style="color: red"></span>
+              <div></div>
+
+              <br />
+
+              <input
+                type="submit"
+                class="loginbutton"
+                id="signupButton"
+                value="Sign Up"
+                disabled
+              />
+              <p>
+                <a href="/login">Already have an account? Login</a>
+              </p>
+            </form>
+          </div>
+        </div>
+        <div class="lnmphoto"></div>
+      </div>
+
+      <% include('../layouts/footer.ejs')%>
+    </div>
+  </body>
+</html>

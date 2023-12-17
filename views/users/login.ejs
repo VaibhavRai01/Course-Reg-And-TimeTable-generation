@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/user_login.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginpage</title>
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg">
+</head>
+     
+<body>
+<div id="particle-js">
+    <div class="main">
+    <div class="navbar">
+        <div class="navLogo">
+            <div class="lnmlogo"></div>
+            <div class="develop"><a href="/developedBy" >Developed By ISDL Team </a></div>
+        </div>
+        <div class="lnmphoto"></div>
+    </div>
+    <div class="container1">
+        <div class="logincontainer">
+        <% if(typeof message !=='undefined' ){ %>
+            <h4 id="servermsg">
+                <%= message %>    
+            </h4>
+            <% } %>
+                <br>
+                <form action="/login" method="post" class="form">
+ 
+                    
+                    <input type="email" id="email" class="logininput" name="email" placeholder="Enter your email address" required>
+
+                    <br>
+                    <!-- <label for="password">Password</label> -->
+                    <input type="password" name="password" class="logininput" required placeholder="Enter password">
+
+                    <button type="submit" class="loginbutton" value="Submit">Submit</button>
+                    <a href="/forget" id="forgettext">Forgot Password?</a>
+                    <a href="/verification" id="verify">Get Verified</a>
+                    <br>
+
+
+                    <a href="/register" id="reg">Don't have an account? Register</a>
+                
+                </form>
+            </div>
+
+            <% include('../layouts/footer.ejs') %>
+    </div>
+</div>
+</div>
+<script src="/particle.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

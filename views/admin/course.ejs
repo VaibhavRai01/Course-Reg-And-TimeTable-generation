@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/css/admin_course.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/lnmid.svg">
+    <title>Admin</title>
+    <script>
+        
+        function validateForm() {
+            const index = document.getElementById('index').value;
+
+            // Define a regular expression for valid course id (only alphanumeric characters)
+            const validCourseIdRegex = /^[a-zA-Z0-9()]+$/;
+
+            // Check if the course id matches the pattern
+            if (!validCourseIdRegex.test(index)) {
+                document.getElementById('nameError').innerText = "Course id should only contain alphanumeric characters.";
+                
+            }
+            else{
+                document.getElementById('nameError').innerText = "";
+            }
+
+            // You can add additional validation logic for other fields here if needed.
+
+        }
+    </script>
+</head>
+<body>
+    <% include('../layouts/header.ejs')%>
+    <div class="main">
+        <div class="navbar">
+          <div class="lnmlogo"></div>
+          <div class="develop"><a href="/admin/developedBy" >Developed By ISDL Team </a></div>
+        </div>
+        <div class="header">
+            <div class="heading">Admin</div>
+            <div class="heading"><h3>Add New Course</h3></div>
+        </div>
+    
+    <div class="formdiv">
+        <form class="addcourseform" action="" method="post" enctype="multipart/form-data">
+            <input class="inputdata" type="text" name="index" id="index" oninput="validateForm()" placeholder="Enter course id" required>
+            <span id="nameError" style="color: red;"></span>
+            <br>
+            <!-- <br><br> -->
+            <input class="inputdata" type="text" name="name" placeholder="Enter course name" required>
+            <!-- <br><br> -->
+            <br>
+            <label for="courseType"></label>
+    <select class="inputdata" id="courseType" name="courseType" required>
+        <option value="" disabled selected hidden>Select Type of course</option>
+        <option value="core">Core Course</option>
+        <option value="programElective">Program Elective</option>
+        <option value="otherElective">Other Elective</option>
+    </select>
+    <br>
+            <!-- <br><br> -->
+            <select class="inputdata" id="semester" name="semester" required>
+                <option value="" disabled selected hidden>Select Semester</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+            </select>
+            <br>
+            <!-- <br><br> -->
+            <select class="inputdata" id="branch" name="branch" required>
+                <option value="" disabled selected hidden>Select Branch</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="CCE">CCE</option>
+                <option value="MME">MME</option>
+                <option value="HSS">HSS</option>
+                <option value="MTH">MTH</option>
+                <option value="PHY">PHY</option>
+
+            </select>
+            <br>
+            <!-- <br><br> -->
+            <!-- <select class="inputdata" id="branch" name="branch" required>
+                <option value="" disabled selected hidden>Select Year</option>
+                <option value="1st">Y-23</option>
+                <option value="2nd">Y-22</option>
+                <option value="3rd">Y-21</option>
+                <option value="4th">Y-20</option>
+            </select>         -->
+            <button type="submit" class="loginbutton" value="Add Course">Add Course</button>
+
+        </form>
+
+
+    </div>
+<!--     
+        <table width="100%">
+            <tr>
+                <th>Course id</th>
+                <th>Name</th>
+                <th>sem</th>
+                <th>branch</th>
+            </tr> -->
+            <div class="courses" width="80%">
+            <% if(course.length> 0)
+                {
+                for(let i=0; i<course.length; i++){ %>
+                    <div class="card_main">
+                    <div class="card_content">
+                    <!-- <tr> -->
+                        
+                        <h1 class="card_heading1">
+                            <%= course[i].coursename %>
+                        </h1>
+                        <h1 class="card_heading2">
+                            <%= course[i].courseid %>
+                        </h1>
+                        <h1 class="card_heading2">
+                            <%= course[i].semester %>
+                        </h1>
+                        <h1 class="card_heading2">
+                            <%= course[i].branch %>
+                        </h1>
+                        
+                        <div class = "delete">
+                            <a href="/admin/delete-course?id=<%= course[i]._id %>"><img class="trashImg" src="/images/trash.png" /></a>
+                        </div>
+                        <!-- </tr> -->
+                        <div class="deletepopup">
+                        <div class="card">
+                            <div class="card-content">
+                              <p class="card-heading">Delete file?</p>
+                              <p class="card-description">Are you sure you want to delete course</p>
+                            </div>
+                            <div class="card-button-wrapper">
+                              <button class="card-button secondary"><a href=""></a>Cancel</a></button>
+                              <button class="card-button primary"><a href="/admin/delete-course?id=<%= course[i]._id %>">Delete</a></button>
+                            </div>
+                            <button class="exit-button">
+                              <svg height="20px" viewBox="0 0 384 512">
+                                <path
+                                  d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                    <% } } %>
+                </div>
+                <div class="courses" width="80%">
+                    <% if(program.length> 0)
+                        {
+                        for(let i=0; i<program.length; i++){ %>
+                            <div class="card_main">
+                            <div class="card_content">
+                            <!-- <tr> -->
+                                
+                                <h1 class="card_heading1">
+                                    <%= program[i].coursename %>
+                                </h1>
+                                <h1 class="card_heading2">
+                                    <%= program[i].courseid %>
+                                </h1>
+                                <h1 class="card_heading2">
+                                    <%= program[i].semester %>
+                                </h1>
+                                <h1 class="card_heading2">
+                                    <%= program[i].branch %>
+                                </h1>
+                                
+                                <div class = "delete">
+                                    <a href="/admin/delete-course?id=<%= program[i]._id %>"><img class="trashImg" src="/images/trash.png" /></a>
+                                </div>
+                                <!-- </tr> -->
+                            </div>
+                        </div>
+                        <div class="deletepopup">
+                            <div class="card">
+                                <div class="card-content">
+                                  <p class="card-heading">Delete file?</p>
+                                  <p class="card-description">Are you sure you want to delete the course</p>
+                                </div>
+                                <div class="card-button-wrapper">
+                                  <button class="card-button secondary"><a href=""></a>Cancel</a></button>
+                                  <button class="card-button primary"><a href="/admin/delete-course?id=<%= course[i]._id %>">Delete</a></button>
+                                </div>
+                                <button class="exit-button">
+                                  <svg height="20px" viewBox="0 0 384 512">
+                                    <path
+                                      d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                                    ></path>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                            <% } } %>
+                        </div>
+                        <div class="courses" width="80%">
+                            <% if(other.length> 0)
+                                {
+                                for(let i=0; i<other.length; i++){ %>
+                                    <div class="card_main">
+                                    <div class="card_content">
+                                    <!-- <tr> -->
+                                        
+                                        <h1 class="card_heading1">
+                                            <%= other[i].coursename %>
+                                        </h1>
+                                        <h1 class="card_heading2">
+                                            <%= other[i].courseid %>
+                                        </h1>
+                                        <h1 class="card_heading2">
+                                            <%= other[i].semester %>
+                                        </h1>
+                                        <h1 class="card_heading2">
+                                            <%= other[i].branch %>
+                                        </h1>
+                                        
+                                        <div class = "delete">
+                                            <a href="/admin/delete-course?id=<%= other[i]._id %>"><img class="trashImg" src="/images/trash.png" /></a>
+                                        </div>
+                                        
+                                    <!-- </tr> -->
+                                  </div>
+                                  </div>
+                                  <div class="deletepopup">
+                                    <div class="card">
+                                        <div class="card-content">
+                                          <p class="card-heading">Delete file?</p>
+                                          <p class="card-description">Are you sure you want to delete the course</p>
+                                        </div>
+                                        <div class="card-button-wrapper">
+                                          <button class="card-button secondary"><a href=""></a>Cancel</a></button>
+                                          <button class="card-button primary"><a href="/admin/delete-course?id=<%= course[i]._id %>">Delete</a></button>
+                                        </div>
+                                        <button class="exit-button">
+                                          <svg height="20px" viewBox="0 0 384 512">
+                                            <path
+                                              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                                            ></path>
+                                          </svg>
+                                        </button>
+                                      </div>
+                                    </div>
+                                    <% } } %>
+                                </div>
+        <!-- </table> -->
+    
+        <% if(typeof message !=='undefined' ){ %>
+            <p style="color: red;">
+                <%= message %>
+            </p>
+            <% } %>
+                <button class="button"><a href="/admin/home">Home</a></button>
+    
+                <% include('../layouts/footer.ejs')%>
+            </div>
+            <script>
+                
+            </script>
+</body>
+</html>
